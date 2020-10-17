@@ -3,12 +3,36 @@
 <head>
   <meta charset="UTF-8">
   <title>login</title>
+  <script>
+      window.onload = function(){
+          //1.获取图片对象
+          var img = document.getElementById("checkCode");
+          //2.绑定单击事件
+          img.onclick = function(){
+              //加时间戳
+              var date = new Date().getTime();
+
+              img.src = "/checkCodeServlet?"+date;
+          }
+
+      }
+  </script>
 </head>
 <body>
+<!--
+分析：
+  点击超链接或者图片，需要换一张
+  1.给超链接和图片绑定单击事件
+  2.重新设置图片的src属性值
+
+-->
   <form action="/loginServlet" method="post">
-    <input type="text" name="username" placeholder="输入用户名"><br><br>
-    <input type="text" name="password" placeholder="输入密码"><br><br>
+    用户名：<input type="text" name="username" placeholder="输入用户名"><br><br>
+    密码：<input type="text" name="password" placeholder="输入密码"><br><br>
+    验证码：<input type="text" name="checkCode" placeholder="输入验证码">
+    <img id="checkCode" src="/checkCodeServlet" alt=""><a id="change" href="">看不清换一张？</a><br><br>
     <input type="submit" value="登 录">
   </form>
+
 </body>
 </html>
