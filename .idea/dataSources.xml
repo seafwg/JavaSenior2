@@ -7,5 +7,11 @@
       <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
       <jdbc-url>jdbc:mysql://localhost:3306/seafwg</jdbc-url>
     </data-source>
+    <data-source source="LOCAL" name="japro" uuid="943f49a6-c157-4d4c-ba2e-8c9949b02e87">
+      <driver-ref>mysql.8</driver-ref>
+      <synchronize>true</synchronize>
+      <jdbc-driver>com.mysql.cj.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://localhost:3306/japro</jdbc-url>
+    </data-source>
   </component>
 </project>
