@@ -1,4 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<!DOCTYPE html>
 <html lang="zh-CN">
   <head>
     <meta charset="utf-8"/>
@@ -18,7 +19,8 @@
   <body>
   <div align="center">
   	<a
-	  href="list.html" style="text-decoration:none;font-size:33px">查询所有用户信息
+	  href="${pageContext.request.contextPath}/findUserInfoByPageServlet"
+    style="text-decoration:none;font-size:33px">查询所有用户信息
 	</a>
   </div>
   </body>

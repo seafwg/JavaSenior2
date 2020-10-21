@@ -2,8 +2,12 @@ package com.seafwg.test;
 
 import com.seafwg.dao.impl.UserDaoImpl;
 import com.seafwg.domain.User;
+import com.seafwg.domain.UserInfo;
+import com.seafwg.service.impl.UserInfoServiceImpl;
 import com.seafwg.service.impl.UserServiceImpl;
 import org.testng.annotations.Test;
+
+import java.util.List;
 
 /**
  * @create author: seafwg
@@ -39,5 +43,17 @@ public class UserTest {
         UserServiceImpl userService = new UserServiceImpl();
         User login = userService.login(user);
         System.out.println(login);
+    }
+
+    /**
+     * 查询列表显示：
+     */
+    @Test
+    public void findAllUserInfoTest() {
+        UserInfoServiceImpl userInfoService = new UserInfoServiceImpl();
+        List<UserInfo> all = userInfoService.findAll();
+        for (UserInfo userInfo : all) {
+            System.out.println(userInfo);
+        }
     }
 }

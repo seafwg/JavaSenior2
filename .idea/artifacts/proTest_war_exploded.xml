@@ -7,6 +7,13 @@
         <element id="directory" name="classes">
           <element id="module-output" name="proTest" />
         </element>
+        <element id="directory" name="lib">
+          <element id="library" level="module" name="taglibs-standard-jstlel-1.2.5" module-name="proTest" />
+          <element id="library" level="module" name="taglibs-standard-impl-1.2.5" module-name="proTest" />
+          <element id="library" level="module" name="testng" module-name="proTest" />
+          <element id="library" level="module" name="c3p0-0.9.1.2" module-name="proTest" />
+          <element id="library" level="module" name="commons-beanutils-1.8.3" module-name="proTest" />
+        </element>
       </element>
     </root>
   </artifact>

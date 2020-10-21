@@ -84,3 +84,33 @@ INSERT INTO user VALUES(1,"admin","seafwg");
 ④UserDao接口实现，UserDaoImpl方法实现 
 **遇到的问题：**
 LoginServlet,获取用户数据后的封装要确保input中的name属性和实体类中的属性一致，不然无法获取。
+
+
+### 2 模块二：查询所有的表格数据
+#### 2.1 创建数据库userinfo
+```sql
+DROP TABLE IF EXISTS `userInfo`;
+CREATE TABLE userInfo(
+     id int primary key auto_increment,
+     name varchar(20) not null,
+     gender varchar(5),
+     age int,
+     address varchar(32),
+     qq	varchar(20),
+     email varchar(50)
+);
+
+INSERT INTO userinfo VALUES (null,"admin","男",23,"甘肃","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"seafwg","男",23,"北京","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"王琦","男",23,"甘肃","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"intelwisd","男",23,"杭州","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"smallwun","男",23,"甘肃","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"王五","男",23,"西安","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"张三","男",23,"甘肃","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"李四","男",23,"广州","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"赵四","男",23,"甘肃","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"郑九","男",23,"临洮","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"邓世昌","男",53,"广州","1004951923","1004951923@qq.com");
+INSERT INTO userinfo VALUES (null,"大圣","男",33,"甘肃","1004951923","1004951923@qq.com");
+```
+#### 2.2 创建实体类UserInfo
