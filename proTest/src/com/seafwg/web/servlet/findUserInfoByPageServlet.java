@@ -29,6 +29,7 @@ public class findUserInfoByPageServlet extends HttpServlet {
         request.setAttribute("allUserInfo", allUserInfo);
         //④数据转发
         request.getRequestDispatcher("/list.jsp").forward(request,response);
+
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {

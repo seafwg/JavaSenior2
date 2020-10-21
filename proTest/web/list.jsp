@@ -41,9 +41,9 @@
             <th>邮箱</th>
             <th>操作</th>
         </tr>
-        <c:forEach items="${allUserInfo.list}" var="user" varStatus="s">
+        <c:forEach items="${allUserInfo}" var="user" varStatus="s">
             <tr>
-                <td><input type="checkbox" name="uid" value="${user.id}"></td>
+                <%--<td><input type="checkbox" name="uid" value="${user.id}"></td>--%>
                 <td>${s.count}</td>
                 <td>${user.name}</td>
                 <td>${user.gender}</td>
