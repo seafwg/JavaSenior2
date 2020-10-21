@@ -15,7 +15,7 @@ public class UserDaoTest {
     public void userDaoTest() {
         //创建User对象
         User user = new User();
-        user.setUsername("com/seafwg");
+        user.setUsername("seafwg");
         user.setPassword("123123");
 
         //调用UserDao
