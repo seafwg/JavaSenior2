@@ -17,6 +17,7 @@ import java.util.List;
  **/
 public class UserTest {
 
+    UserInfoServiceImpl userInfoService = new UserInfoServiceImpl();
     /**
      * 登录测试：UserDaoImpl
      */
@@ -50,10 +51,16 @@ public class UserTest {
      */
     @Test
     public void findAllUserInfoTest() {
-        UserInfoServiceImpl userInfoService = new UserInfoServiceImpl();
         List<UserInfo> all = userInfoService.findAll();
         for (UserInfo userInfo : all) {
             System.out.println(userInfo);
         }
+    }
+    /**
+     * 根据id删除测试：
+     */
+    @Test
+    public void delUserInfoById() {
+        userInfoService.delUserInfo("1");
     }
 }

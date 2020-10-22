@@ -16,4 +16,6 @@ public interface UserInfoService {
      * @return
      */
     public List<UserInfo> findAll();
+
+    public void delUserInfo(String id);
 }

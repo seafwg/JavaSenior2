@@ -26,4 +26,11 @@ public class UserInfoDaoImpl implements UserInfoDao {
         List<UserInfo> userInfo = jdbcTemplate.query(sql, new BeanPropertyRowMapper<UserInfo>(UserInfo.class));
         return userInfo;
     }
+
+    @Override
+    public void delUserInfoById(int id) {
+        //定义sql:
+        String sql = "DELETE FROM userinfo WHERE id = ?";
+        jdbcTemplate.update(sql, id);
+    }
 }

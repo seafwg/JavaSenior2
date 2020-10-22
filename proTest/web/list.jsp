@@ -32,6 +32,7 @@
     <h3 style="text-align: center">用户信息列表</h3>
     <table border="1" class="table table-bordered table-hover">
         <tr class="success">
+            <td><input type="checkbox" name="uid" value=""></td>
             <th>编号</th>
             <th>姓名</th>
             <th>性别</th>
@@ -43,7 +44,7 @@
         </tr>
         <c:forEach items="${allUserInfo}" var="user" varStatus="s">
             <tr>
-                <%--<td><input type="checkbox" name="uid" value="${user.id}"></td>--%>
+                <td><input type="checkbox" name="uid" value="${user.id}"></td>
                 <td>${s.count}</td>
                 <td>${user.name}</td>
                 <td>${user.gender}</td>
@@ -53,21 +54,11 @@
                 <td>${user.email}</td>
                 <td>
                     <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
-                    <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除</a>
+                    <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除
+                    </a>
                 </td>
             </tr>
-
         </c:forEach>
-        <%--<tr>
-            <td>5</td>
-            <td>张三</td>
-            <td>男</td>
-            <td>20</td>
-            <td>广东</td>
-            <td>44444222</td>
-            <td>zs@qq.com</td>
-            <td><a class="btn btn-default btn-sm" href="update.html">修改</a>&nbsp;<a class="btn btn-default btn-sm" href="">删除</a></td>
-        </tr>--%>
         <tr>
             <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
         </tr>
@@ -75,7 +66,11 @@
 </div>
 
 <script>
-    const userInfo = [];
+    function deleteUser(id) {
+        if (confirm("你确定要删除吗？")) {
+            location.href = "${pageContext.request.contextPath}/delUserServlet?id="+id;
+        }
+    }
 
 </script>
 </body>
