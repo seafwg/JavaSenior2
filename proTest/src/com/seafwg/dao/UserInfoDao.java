@@ -16,4 +16,10 @@ public interface UserInfoDao {
 
     //根据id删除数据
     public void delUserInfoById(int id);
+
+    //根据id查询用户记录
+    public UserInfo findUserInfoById(int id);
+
+    //修改更新数据
+    public void updateUserInfo(UserInfo userInfo);
 }

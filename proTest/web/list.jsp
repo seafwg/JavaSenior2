@@ -53,14 +53,17 @@
                 <td>${user.qq}</td>
                 <td>${user.email}</td>
                 <td>
-                    <a class="btn btn-default btn-sm" href="${pageContext.request.contextPath}/findUserServlet?id=${user.id}">修改</a>&nbsp;
+                    <a class="btn btn-default btn-sm"
+                       href="${pageContext.request.contextPath}/modifyUserServlet?id=${user.id}">修改
+                    </a>&nbsp;
                     <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除
                     </a>
                 </td>
             </tr>
         </c:forEach>
         <tr>
-            <td colspan="8" align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
+            <td colspan="10"
+                align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
         </tr>
     </table>
 </div>

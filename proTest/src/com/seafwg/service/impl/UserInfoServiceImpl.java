@@ -28,4 +28,23 @@ public class UserInfoServiceImpl implements UserInfoService {
     public void delUserInfo(String id) {
         userInfoDao.delUserInfoById(Integer.parseInt(id));
     }
+
+    /**
+     * 根据用户id查询记录
+     * @param id
+     * @return
+     */
+    @Override
+    public UserInfo findUserInfoById(String id) {
+        return userInfoDao.findUserInfoById(Integer.parseInt(id));
+    }
+
+    /**
+     * 修改更新数据
+     * @param userInfo
+     */
+    @Override
+    public void updateUserInfo(UserInfo userInfo) {
+        userInfoDao.updateUserInfo(userInfo);
+    }
 }

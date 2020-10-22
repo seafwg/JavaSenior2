@@ -117,3 +117,5 @@ INSERT INTO userinfo VALUES (null,"大圣","男",33,"甘肃","1004951923","10049
 #### 2.3 编写UserInfoDao接口，声明查询所有用户信息的方法，编写UserInfoDaoImpl类实现查询所有用户信息的方法
 #### 2.4 编写UserInfoService接口，声明查询所有用户信息的方法，编写UserInfoServiceImpl类实现查询所有用户的方法
 #### 2.5 发送查询的servlet,创建UserInfoServiceImpl类，调用查询所有用户信息的方法
+
+### 3 表格数据修改一行：

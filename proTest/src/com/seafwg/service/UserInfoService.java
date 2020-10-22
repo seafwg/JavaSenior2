@@ -17,5 +17,21 @@ public interface UserInfoService {
      */
     public List<UserInfo> findAll();
 
+    /**
+     * 删除一行数据id
+     * @param id
+     */
     public void delUserInfo(String id);
+
+    /**
+     * 修改功能：根据id查询用户为id的一条记录
+     * @param id
+     */
+    public UserInfo findUserInfoById(String id);
+
+    /**
+     * 修改更新数据
+     * @param userInfo
+     */
+    public void updateUserInfo(UserInfo userInfo);
 }
