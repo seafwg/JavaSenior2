@@ -47,4 +47,13 @@ public class UserInfoServiceImpl implements UserInfoService {
     public void updateUserInfo(UserInfo userInfo) {
         userInfoDao.updateUserInfo(userInfo);
     }
+
+    /**
+     * 添加用户信息
+     * @param userInfo
+     */
+    @Override
+    public void addUserInfo(UserInfo userInfo) {
+        userInfoDao.addUserInfo(userInfo);
+    }
 }

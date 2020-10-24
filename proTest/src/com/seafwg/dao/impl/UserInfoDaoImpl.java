@@ -65,4 +65,15 @@ public class UserInfoDaoImpl implements UserInfoDao {
                 userInfo.getEmail(),userInfo.getId()
         );
     }
+
+    /**
+     * 添加用户信息：
+     * @param userInfo
+     */
+    @Override
+    public void addUserInfo(UserInfo userInfo) {
+        String sql = "INSERT INTO userinfo VALUES(null,?,?,?,?,?,?)";
+        jdbcTemplate.update(sql, userInfo.getName(), userInfo.getGender(), userInfo.getAge(),
+                userInfo.getAddress(), userInfo.getQq(), userInfo.getEmail());
+    }
 }

@@ -30,42 +30,78 @@
 <body>
 <div class="container">
     <h3 style="text-align: center">用户信息列表</h3>
-    <table border="1" class="table table-bordered table-hover">
-        <tr class="success">
-            <td><input type="checkbox" name="uid" value=""></td>
-            <th>编号</th>
-            <th>姓名</th>
-            <th>性别</th>
-            <th>年龄</th>
-            <th>籍贯</th>
-            <th>QQ</th>
-            <th>邮箱</th>
-            <th>操作</th>
-        </tr>
-        <c:forEach items="${allUserInfo}" var="user" varStatus="s">
-            <tr>
-                <td><input type="checkbox" name="uid" value="${user.id}"></td>
-                <td>${s.count}</td>
-                <td>${user.name}</td>
-                <td>${user.gender}</td>
-                <td>${user.age}</td>
-                <td>${user.address}</td>
-                <td>${user.qq}</td>
-                <td>${user.email}</td>
-                <td>
-                    <a class="btn btn-default btn-sm"
-                       href="${pageContext.request.contextPath}/modifyUserServlet?id=${user.id}">修改
-                    </a>&nbsp;
-                    <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除
-                    </a>
-                </td>
+    <div style="float: left;">
+        <form class="form-inline" action="" method="post">
+            <div class="form-group">
+                <label for="exampleInputName2">姓名</label>
+                <input type="text" name="name" value="" class="form-control" id="exampleInputName2" >
+            </div>
+            <div class="form-group">
+                <label for="exampleInputName3">籍贯</label>
+                <input type="text" name="address" value="" class="form-control" id="exampleInputName3" >
+            </div>
+
+            <div class="form-group">
+                <label for="exampleInputEmail2">邮箱</label>
+                <input type="text" name="email" value="" class="form-control" id="exampleInputEmail2"  >
+            </div>
+            <button type="submit" class="btn btn-default">查询</button>
+        </form>
+    </div>
+
+    <div style="float: right;margin: 0 5px 12px 0;">
+        <a class="btn btn-primary" href="${pageContext.request.contextPath}/add.jsp">添加联系人</a>
+        <a class="btn btn-primary" href="javascript:void(0);" id="delSelected">删除选中</a>
+    </div>
+    <form action="${pageContext.request.contextPath}/" method="post" name="form">
+        <table border="1" class="table table-bordered table-hover">
+            <tr class="success">
+                <td><input type="checkbox" name="uid" value=""></td>
+                <th>编号</th>
+                <th>姓名</th>
+                <th>性别</th>
+                <th>年龄</th>
+                <th>籍贯</th>
+                <th>QQ</th>
+                <th>邮箱</th>
+                <th>操作</th>
             </tr>
-        </c:forEach>
-        <tr>
-            <td colspan="10"
-                align="center"><a class="btn btn-primary" href="add.html">添加联系人</a></td>
-        </tr>
-    </table>
+            <c:forEach items="${allUserInfo}" var="user" varStatus="s">
+                <tr>
+                    <td><input type="checkbox" name="uid" value="${user.id}"></td>
+                    <td>${s.count}</td>
+                    <td>${user.name}</td>
+                    <td>${user.gender}</td>
+                    <td>${user.age}</td>
+                    <td>${user.address}</td>
+                    <td>${user.qq}</td>
+                    <td>${user.email}</td>
+                    <td>
+                        <a class="btn btn-default btn-sm"
+                           href="${pageContext.request.contextPath}/modifyUserServlet?id=${user.id}">修改
+                        </a>&nbsp;
+                        <a class="btn btn-default btn-sm" href="javascript:deleteUser(${user.id});">删除
+                        </a>
+                    </td>
+                </tr>
+            </c:forEach>
+        </table>
+    </form>
+    <nav aria-label="...">
+        <ul class="pagination" style="margin:0;">
+            <li class="page-item disabled">
+                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">&laquo;</a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">1</a></li>
+            <li class="page-item active" aria-current="page">
+                <a class="page-link" href="#">2 <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="page-item"><a class="page-link" href="#">3</a></li>
+            <li class="page-item">
+                <a class="page-link" href="#">&raquo;</a>
+            </li>
+        </ul>
+    </nav>
 </div>
 
 <script>

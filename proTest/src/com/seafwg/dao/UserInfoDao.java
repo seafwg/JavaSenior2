@@ -22,4 +22,7 @@ public interface UserInfoDao {
 
     //修改更新数据
     public void updateUserInfo(UserInfo userInfo);
+
+    //添加一条用户信息
+    void addUserInfo(UserInfo userInfo);
 }

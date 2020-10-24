@@ -34,4 +34,10 @@ public interface UserInfoService {
      * @param userInfo
      */
     public void updateUserInfo(UserInfo userInfo);
+
+    /**
+     * 添加一条用户信息
+     * @param userInfo
+     */
+    void addUserInfo(UserInfo userInfo);
 }
