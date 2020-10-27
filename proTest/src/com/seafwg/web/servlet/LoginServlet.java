@@ -39,6 +39,7 @@ public class LoginServlet extends HttpServlet {
             //验证码不正确：跳转到登录页，提示错误信息
             request.setAttribute("login_msg","验证码输入错误...");
             request.getRequestDispatcher("/login.jsp").forward(request,response);
+            return;
         }
 
         //2.3获取用户信息：

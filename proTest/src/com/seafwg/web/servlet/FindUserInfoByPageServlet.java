@@ -18,7 +18,7 @@ import java.util.List;
  * TODO
  **/
 @WebServlet("/findUserInfoByPageServlet")
-public class findUserInfoByPageServlet extends HttpServlet {
+public class FindUserInfoByPageServlet extends HttpServlet {
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         //①设置编码
         request.setCharacterEncoding("utf-8");
