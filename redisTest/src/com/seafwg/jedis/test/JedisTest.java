@@ -1,6 +1,7 @@
 package com.seafwg.jedis.test;
 
 import com.seafwg.jedis.utils.JedisUtils;
+import com.seafwg.service.impl.ProvinceServiceImpl;
 import org.testng.annotations.Test;
 import redis.clients.jedis.Jedis;
 
@@ -125,5 +126,15 @@ public class JedisTest {
         String username = jedis.get("username");
         System.out.println(username);
         jedis.close();
+    }
+
+    /**
+     * 测试ProvinceServiceImpl
+     */
+    @Test
+    public void test7() {
+        ProvinceServiceImpl provinceService = new ProvinceServiceImpl();
+        String allJson = provinceService.findAllJson();
+        System.out.println(allJson);
     }
 }
