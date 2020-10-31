@@ -1,5 +1,6 @@
 package com.seafwg.jedis.test;
 
+import com.seafwg.jedis.utils.JedisUtils;
 import org.testng.annotations.Test;
 import redis.clients.jedis.Jedis;
 
@@ -108,6 +109,21 @@ public class JedisTest {
         jedis.zadd("mySortedSet",90,"zhangtingyi");
         Set<String> mySortedSet = jedis.zrange("mySortedSet", 0, -1);
         System.out.println(mySortedSet);
+        jedis.close();
+    }
+
+    /**
+     * 测试JedisUtils工具类
+     */
+    @Test
+    public void test6() {
+        //①创建Jedis工具类
+        JedisUtils jedisUtils = new JedisUtils();
+        //②获取连接对象
+        Jedis jedis = jedisUtils.getJedis();
+        jedis.set("username","hhhhh");
+        String username = jedis.get("username");
+        System.out.println(username);
         jedis.close();
     }
 }
